@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body class="app">
+
+    <nav class="navbars">
+        <button class="sidebar-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </nav>
+    <aside class="sidebars">
+        <div class="sidebar-nav">
+            <span class="brand">TRACER STUDY</span>
+            <button class="sidebar-toggle-closes">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+        <div class="sidebar-user">
+            <div class="user-image">
+                <img src="./../assets/dist/img/avatar.png" alt="">
+            </div>
+            <div class="user-captions">
+                <h2>Muhammad Yusuf Abdull Rayhimm</h2>
+                <div class="status">
+                    <span></span>
+                    <p>Online</p>
+                </div>
+            </div>
+
+        </div>
+        <ul class="sidebar-menu">
+            <li class="active">
+                <a href="#">
+                    <ion-icon name="home-outline"></ion-icon>
+                    <span class="name">Dashboard</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <ion-icon name="list-outline"></ion-icon>
+                    <span class="name">Tracer Study</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <ion-icon name="list-outline"></ion-icon>
+                    <span class="name">Survei Lulusan</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <ion-icon name="settings-outline"></ion-icon>
+                    <span class="name">Akun</span>
+                </a>
+            </li>
+        </ul>
+    </aside>
+    <section class="content">
+        <section class="content-header">
+            <h2 class="title">Dashboard</h2>
+        </section>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h2 class="card-title">HEADER</h2>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="form-group-floating mb-3">
+                                    <label for="">Nama</label>
+                                    <input type="text" class="form-control">
+                                    <span class="form-text">Harus diisi tidak boleh kosong !</span>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group-floating mb-3">
+                                    <label for="">Nama</label>
+                                    <input type="text" class="form-control is-invalid">
+                                    <span class="form-text">Harus diisi tidak boleh kosong !</span>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group-floating mb-3">
+                                    <label for="">Nama</label>
+                                    <input type="text" class="form-control is-invalid">
+                                    <span class="form-text">Harus diisi tidak boleh kosong !</span>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group-floating mb-3">
+                                    <label for="">Nama</label>
+                                    <input type="text" class="form-control is-invalid">
+                                    <span class="form-text">Harus diisi tidak boleh kosong !</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h2 class="card-title">
+                            <ul id="steps-native" class="nav nav-pills justify-content-center"></ul>
+                        </h2>
+                    </div>
+                    <div class="card-body">
+                        <form id="formStep" class="mb-4">
+                            <div class="mb-3">
+                                <h2 class="text-center">Form Step</h2>
+                            </div>
+
+                            <!-- Step 1 -->
+                            <div class="step" data-step="1">
+                                <h3>Step 1</h3>
+                                <div class="mb-3">
+                                    <label for="inputStep1">Field 1:</label>
+                                    <input type="text" class="form-control" id="inputStep1" required>
+                                </div>
+                                <button type="button" class="btn btn-primary next-step">Next</button>
+                            </div>
+
+                            <!-- Step 2 -->
+                            <div class="step" data-step="2">
+                                <h3>Step 2</h3>
+                                <div class="mb-3">
+                                    <label for="inputStep2">Field 2:</label>
+                                    <input type="text" class="form-control" id="inputStep2" required>
+                                </div>
+                                <button type="button" class="btn btn-secondary prev-step">Previous</button>
+                                <button type="button" class="btn btn-primary next-step">Next</button>
+                            </div>
+
+                            <!-- Step 3 -->
+                            <div class="step" data-step="3">
+                                <h3>Step 3</h3>
+                                <div class="mb-3">
+                                    <label for="inputStep3">Field 3:</label>
+                                    <input type="text" class="form-control" id="inputStep3" required>
+                                </div>
+                                <button type="button" class="btn btn-secondary prev-step">Previous</button>
+                                <button type="submit" class="btn btn-success">Submit</button>
+                            </div>
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="./js/jquery.min.js"></script>
+    <script src="./bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/ionicons@latest/dist/ionicons.js"></script>
+    <script src="./js/app.js"></script>
+    <script src="./js/step-form.js"></script>
+</body>
+
+</html>

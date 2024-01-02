@@ -1,0 +1,476 @@
+@import url('./fonts.css');
+
+:root {
+    --primary: #6366f1;
+    --secondary: #4f46e5;
+    --success: #14b8a6;
+    --warning: #fbbf24;
+    --danger: #ef4444;
+    --slate50: #f8fafc;
+    --slate100: #f1f5f9;
+    --slate200: #e2e8f0;
+    --slate300: #cbd5e1;
+    --slate400: #94a3b8;
+    --slate500: #64748b;
+    --slate600: #475569;
+    --slate700: #334155;
+    --slate800: #1e293b;
+    --slate900: #0f172a;
+    --slate950: #020617;
+    --slate1000: #020619;
+    --darkmodeColors: #121212;
+}
+
+.app {
+    display: grid;
+    grid-template-areas: 'side header' 'side con';
+    background-color: var(--slate100);
+    font-family: 'Poppins', sans-serif;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+
+
+/* Navbars */
+.navbars {
+    grid-area: header;
+    width: calc(100vw - 250px);
+    height: 57px;
+    background-color: var(--secondary);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.navbars .sidebar-toggle,
+.sidebar-toggle-closes {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    border: 0;
+    outline: none;
+    background-color: var(--slate50);
+    width: 57px;
+    height: 57px;
+    transition: all .5s linear;
+    opacity: 0;
+}
+
+.navbars .sidebar-toggle span,
+.sidebar-toggle-closes span {
+    display: block;
+    padding: 0;
+    margin: 0;
+    width: 22px;
+    height: 2px;
+    background-color: var(--slate500);
+}
+
+.navbars .sidebar-toggle span:nth-child(2),
+.sidebar-toggle-closes span:nth-child(2) {
+    margin: 6px 0;
+}
+
+/* ############################## */
+
+/* Sidebar */
+/* Sidebar */
+.sidebars {
+    grid-area: side;
+    width: 250px;
+    height: 100vh;
+    background-color: #FFFFFF;
+    transition: all .5s linear;
+}
+
+.sidebars .sidebar-nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 57px;
+    background-color: var(--secondary);
+}
+
+.sidebars .sidebar-nav .brand {
+    display: block;
+    padding: 0;
+    margin: 0;
+    font-size: 20px;
+    font-weight: 500;
+    color: #FFFFFF;
+    overflow: hidden;
+    text-overflow: inherit;
+    white-space: nowrap;
+}
+
+.sidebar-toggle-closes {
+    position: fixed;
+    left: 250px;
+    display: none;
+    opacity: 0;
+}
+
+.sidebar-user {
+    display: flex;
+    padding: 24px;
+    height: 130px;
+    margin-bottom: 32px;
+    border-bottom: 2px solid var(--slate100);
+}
+
+.sidebar-user .user-image {
+    overflow: hidden;
+    width: 65px;
+    height: 45px;
+    border-radius: 50%;
+    border: 2px solid var(--slate300);
+}
+
+.sidebar-user .user-image img {
+    width: 100%;
+    height: 100%;
+}
+
+.sidebar-user .user-captions {
+    margin-left: 12px;
+}
+
+.sidebar-user .user-captions h2 {
+    display: block;
+    padding: 0;
+    margin: 0;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--slate700);
+}
+
+.sidebar-user .user-captions .status {
+    display: flex;
+    align-items: center;
+    margin-top: 6px;
+}
+
+.sidebar-user .user-captions .status p {
+    display: block;
+    padding: 0;
+    margin: 0 0 0 6px;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--slate500);
+}
+
+.sidebar-user .user-captions .status span {
+    display: block;
+    padding: 0;
+    margin: 0;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: var(--success);
+}
+
+.sidebar-menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    gap: 6px
+}
+
+.sidebar-menu li {
+    padding: 0 12px;
+}
+
+.sidebar-menu li a {
+    padding: 12px 16px;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    background-color: var(--slate200);
+    border-radius: 4px;
+    color: var(--slate500);
+    transition: all .3s linear;
+}
+
+.sidebar-menu li.active a,
+.sidebar-menu li:hover a,
+.sidebar-menu li a:focus {
+    background-color: var(--primary);
+    color: #FFFFFF;
+}
+
+.sidebar-menu li a .name {
+    display: block;
+    font-size: 14px;
+    font-weight: 500;
+    margin-left: 12px;
+}
+
+
+
+/* ############################## */
+
+section.content {
+    grid-area: con;
+    width: calc(100vw - 250px);
+    max-height: calc(100vh - 57px);
+    min-height: calc(100vh - 57px);
+    ;
+    padding: 24px;
+    transition: all .5s linear;
+    overflow-y: auto;
+}
+
+section.content .content-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 32px;
+}
+
+section.content .content-header .title {
+    display: block;
+    padding: 0;
+    margin: 0;
+    font-size: 22px;
+    font-weight: 500;
+    color: var(--slate600);
+}
+
+/* Card */
+.card {
+    border: 0;
+    background-color: #FFFFFF;
+    border-radius: 4px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.068);
+    margin-bottom: 32px;
+}
+
+.card-header {
+    border-bottom: 0.6px solid var(--slate200);
+    background-color: transparent;
+    clear: both;
+    padding: 24px;
+}
+
+.card-body {
+    clear: both;
+    padding: 24px;
+}
+
+.card-footer {
+    border-top: 0.6px solid var(--slate200);
+    background-color: transparent;
+}
+
+.card-header .card-title {
+    display: block;
+    padding: 0;
+    margin: 0;
+    font-size: 18px;
+    color: var(--slate500);
+}
+
+/* ####################### */
+
+/* form-floating */
+.form-group-floating {
+    position: relative;
+}
+
+.form-group-floating>label {
+    position: absolute;
+    font-size: 14px;
+    font-weight: 500;
+    padding: 2px 12px;
+    height: 37px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease-out;
+}
+
+.form-group-floating.active>label {
+    transform: translateY(-70%) scale(0.80);
+    color: var(--slate700);
+    padding: 2px 3px;
+    font-weight: 500;
+}
+
+.form-group-floating .form-control {
+    border-radius: 0;
+    border-top: 0;
+    border-left: 0;
+    border-right: 0;
+    border-bottom: 2px solid var(--slate200);
+    font-size: 14px;
+    color: var(--slate500);
+    background-color: transparent;
+}
+
+.form-group-floating .form-control:focus,
+.form-group-floating.active .form-control {
+    border-bottom: 2px solid var(--primary);
+    box-shadow: 0 0 0 0 !important;
+}
+
+.form-group-floating .form-control.is-invalid,
+.form-group-floating .form-control.is-invalid:focus {
+    border-bottom: 2px solid var(--danger);
+    box-shadow: 0 0 0 0 !important;
+}
+
+.form-group-floating .form-text {
+    font-size: 12px;
+    float: right;
+    color: var(--danger);
+}
+
+/* Custom radio button */
+.form-ceheckbox {
+    position: relative;
+}
+
+.form-ceheckbox .label {
+    position: absolute;
+    transform: translateY(-70%) scale(0.80);
+}
+
+.form-ceheckbox .box {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    gap: 2px;
+    height: 35px;
+    align-items: flex-end;
+    border-bottom: 2px solid var(--slate300);
+}
+
+.form-check .form-check-label {
+    display: block;
+    padding: 0;
+    margin: 0;
+    font-size: 14px;
+}
+
+
+
+@media only screen and (max-width: 600px) {
+    .app {
+        display: grid;
+        grid-template-areas: 'header' 'side' 'con';
+    }
+
+    .navbars,
+    section.content {
+        width: 100vw !important;
+
+    }
+
+    .sidebars {
+        position: fixed;
+        left: -100%;
+        z-index: 9;
+    }
+
+    .app.open .sidebars {
+        left: 0;
+
+    }
+
+    .sidebar-toggle {
+        opacity: 1 !important;
+
+    }
+
+    .app.open .sidebars .sidebar-toggle-closes {
+        display: flex;
+        opacity: 1;
+        transition: opacity .5s linear;
+    }
+}
+
+.text-empty {
+    display: block;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+    font-size: 18px;
+    color: var(--success);
+}
+
+.card-blank {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    min-height: 50vh;
+    padding: 24px;
+}
+
+.card-blank ion-icon {
+    font-size: 100px !important;
+    margin-bottom: 24px;
+    color: var(--slate300);
+}
+
+/* Darkmode */
+[data-bs-theme=dark] .app {
+    background-color: var(--darkmodeColors)
+}
+
+[data-bs-theme=dark] .sidebars,
+[data-bs-theme=dark] .navbars {
+    background-color: var(--darkmodeColors) !important;
+    box-shadow: 0 0 7px rgba(0, 0, 0, 0.205);
+}
+
+[data-bs-theme=dark] .sidebar-user .user-captions h2 {
+    color: var(--slate300);
+}
+
+/* ############# */
+
+.guest-screen {
+    padding: 32px !important;
+    background-color: var(--slate100) !important;
+}
+
+.guest-screen .appbar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.guest-screen .appbar img {
+    width: 200px;
+    margin-bottom: 24px;
+}
+
+.guest-screen .appbar h2 {
+    display: block !important;
+    padding: 0 !important;
+    margin: 0;
+    text-align: center;
+    font-size: 30px;
+}
+
+.guest-screen .app-body h2 {
+    display: block;
+    padding: 0;
+    margin: 24px 0;
+    font-size: 18px;
+}
+
+.guest-screen .app-body ul {
+    list-style: none;
+    padding: 0;
+}
+
+.guest-screen .app-body .card-form {
+    background-color: white !important;
+    padding: 24px;
+    border-radius: 10px;
+}
